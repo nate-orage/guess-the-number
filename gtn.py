@@ -46,7 +46,6 @@ def easy_counter():
         except ValueError:
             counter += 1
             print(incorrect)
-            print(counter)
             if counter == 10:
                 print(lose)
                 break
@@ -61,7 +60,6 @@ def easy_counter():
         elif guess != correct_num:
             counter += 1
             print(incorrect)
-            print(counter)
 
 
 def hard_counter():
@@ -82,7 +80,6 @@ def hard_counter():
         except ValueError:
             counter += 1
             print(incorrect)
-            print(counter)
             if counter == 20:
                 print(lose)
                 break
@@ -97,7 +94,6 @@ def hard_counter():
         elif guess != correct_num:
             counter += 1
             print(incorrect)
-            print(counter)
 
 
 name = input(f"\nHello, what" "s your name?\n")

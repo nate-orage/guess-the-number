@@ -6,7 +6,7 @@ import random
 def mode_check(list):
     # This defines either easy or hard mode.
     mode = input(
-        f"\nHello, {name}!\nWelcome to Guess the Number!! Would you like easy mode or hard mode?\n Easy mode consists of 10 numbers from 1 - 20. You will have 10 attempts.\n Hard mode consists of 20 numbers from 1 - 30. You will have 20 attempts.\n"
+        f"\nHello, {name}!\nWelcome to Guess the Number!! Would you like easy mode or hard mode?\n Easy mode consists of 10 numbers from 1 - 20. You will have 10 attempts.\n Hard mode consists of 20 numbers from 1 - 40. You will have 20 attempts.\n"
     )
     easy = ["easy", "Easy"]
     hard = ["hard", "Hard"]
@@ -34,6 +34,7 @@ def easy_counter():
     # This function outputs the list of numbers to choose from and tells you how many turns you have left based on a counter.
     global counter
     while counter < 11:
+        # I decided that the correct number will be in the same position every time. However the list will shuffle each time.
         correct_num = list[-5]
         winner = f"\nYou win! {correct_num} is the correct number!"
         incorrect = f"\nIncorrect. Please try again. You have {10 - counter} attempts remaining.\n"
@@ -42,6 +43,7 @@ def easy_counter():
             f"Take a guess!\nYou have a total of {len(list)} numbers to choose from.\n\nYour choices are:\n{list}.\n"
         )
         try:
+            # This verifies that the input is a whole number and not a float or str.
             int(guess)
         except ValueError:
             counter += 1
@@ -66,6 +68,7 @@ def hard_counter():
     # This function outputs the list of numbers to choose from and tells you how many turns you have left based on a counter.
     global counter
     while counter < 21:
+        # I decided that the correct number will be in the same position every time. However the list will shuffle each time.
         correct_num = list[-10]
         print(list)
         print(correct_num)

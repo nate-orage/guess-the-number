@@ -3,8 +3,7 @@
 import random
 from os import system, name
 
-
-def mode_check(list):
+def mode_check():
     # This defines either easy or hard mode.
     mode = input(
         f"\nHello, {name}!\nWelcome to Guess the Number!! Would you like easy mode or hard mode?\n Easy mode consists of 10 numbers from 1 - 20. You will have 10 attempts.\n Hard mode consists of 20 numbers from 1 - 40. You will have 20 attempts.\n"
@@ -23,7 +22,7 @@ def mode_check(list):
         print(mode_choice)
         return list
     else:
-        return mode_check(list)
+        return mode_check()
 
 
 def guess_the_number():
@@ -116,7 +115,7 @@ def clear():
         _ = system("clear")
 
 
-name = input(f"\nHello, what" "s your name?\n")
+name = (input(f"\nHello, what" "s your name?\n")).capitalize()
 counter = 0
-list = mode_check(list)
+list = mode_check()
 guess_the_number()
